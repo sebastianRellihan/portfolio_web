@@ -220,24 +220,37 @@ header {
             }
 
 /* Projects */
-.projects a {
+.projects div {
     width: 80%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
 }
-.projects div {
+.projects div a div {
     width: 100%;
     height: 40vh;
     border-radius: 10px;
 }
-.workplace-station {
+.project-1 {
     background-image: url("../img/WS.PNG");
     background-size: cover;
 }
-    .workplace-station h4 {
+.project-2 {
+    background-image: url("../img/transparentGovermentInFact.PNG");
+    background-size: cover;
+}
+    .projects div a:hover {
+        opacity: 0.8;
+    }
+    .project-1 h4,
+    .project-2 h4 {
         color: var(--dark-color);
         font-weight: var(--semi-bold-font-weight);
         font-size: var(--normal-medium-font-size);
         background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 2px;
         box-shadow: 3px 3px 5px rgba(0,0,0,0.35);
     }
 
@@ -245,6 +258,9 @@ header {
 .contact div:first-of-type a {
     text-align: center;
     font-size: var(--medium-big-font-size);
+}
+.contact div:last-of-type ul li {
+    margin-bottom: 10px;
 }
 
 /* Footer */
@@ -255,4 +271,124 @@ footer {
     text-align: center;
     background-color: var(--dark-color);
     color: var(--light-color);
+}
+
+/* Media Queries */
+
+/* Tablet  */
+@media (min-width: 768px){
+    /* Header */
+    .header-bar div:first-of-type a {
+        font-size: var(--normal-medium-font-size);
+    }
+    .header-bar div:last-child i {
+        font-size: var(--big-font-size);
+    }
+    .nav-bar ul li {
+        margin-bottom: 25px;
+    }
+
+    /* Home */
+    .home div:last-child a {
+        font-size: var(--medium-font-size);
+    }
+
+    /* About */
+    .myself div img {
+        width: 50%;
+    }
+    .myself div p {
+        text-align: start;
+    }
+
+    /* Skills */
+    .skills div {
+        width: 33.3%;
+    }
+
+    /* Contact */
+    .contact div:last-of-type ul li {
+        margin-bottom: 15px;
+    }
+}
+
+/* Desktop  */
+@media (min-width: 1024px){
+    /* Header */
+    .nav-bar {
+        position: static;
+        width: inherit;
+        height: inherit;
+        font-size: var(--normal-medium-font-size);
+        background-color: var(--bg-color);
+    }
+        .nav-bar ul {
+            display: flex;
+            align-items: center;
+
+        }
+            .nav-bar ul li {
+                margin: 0 15px 0 0;
+                align-self: center;
+                text-shadow: 1px 1px 2px var(--dark-color);
+            }
+    .icons {
+        display: none;
+    }
+    .header-bar div:first-of-type a {
+        font-size: var(--normal-medium-font-size);
+    }
+
+    /* Home */
+    .home div:first-child {
+        left: 10vw;
+        top: 35vh;
+        font-size: var(--normal-medium-font-size);
+    }
+        .home div:last-child a {
+            font-size: var(--medium-font-size);
+        }
+
+    /* About */
+    .myself {
+        flex-direction: row;
+        justify-content: center;
+        margin: 50px 0;
+    }
+        .myself div:first-of-type  {
+            width: 40%;
+        }
+        .myself div:last-of-type  {
+            font-size: var(--normal-medium-font-size);
+            width: 60%;
+        }
+    .myself div img {
+        width: 50%;
+    }
+    .myself div p {
+        text-align: start;
+    }
+
+    /* Skills */
+    .skills div {
+        width: 25%;
+    }
+
+    /* Projects */
+    .projects div  {
+        flex-direction: row;
+        height: initial;
+    }
+        .projects div a {
+            width: 30%;
+        }
+
+    /* Contact */
+    .contact div:first-of-type a {
+        font-size: var(--big-font-size);
+        margin: 20px 0;
+    }
+    .contact div:last-of-type {
+        height: 20vh;
+    }
 }
