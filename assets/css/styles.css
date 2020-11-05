@@ -373,6 +373,9 @@ footer {
     .skills div {
         width: 25%;
     }
+        .skills div div {
+            width: 75%;
+        }
 
     /* Projects */
     .projects div  {
