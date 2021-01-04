@@ -94,8 +94,8 @@ header {
     top: 0;
     width: 100vw;
     z-index: 100;
-    background-color: var(--bg-color);
-    color: var(--dark-color);
+    background-color: var(--dark-color);
+    color: var(--white-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
     .header-bar {
@@ -111,7 +111,7 @@ header {
             left: 0;
             width: 100vw;
             height: 92vh;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: var(--dark-color);
             font-size: var(--big-font-size);
         }
             .nav-bar ul {
@@ -136,6 +136,7 @@ header {
 .home {
     height: 100vh;
     background-image: url("../img/texture.png");
+    background-attachment: fixed;
 }
     .home div:first-child {
         position: absolute;
@@ -160,7 +161,16 @@ header {
         }
 
 /* About */
-.about h2, .skills h2, .projects h2, .contact h2 {
+.about .about-header {
+    width: 100vw;
+    height: 80vh;
+    background-color: var(--white-color);
+    justify-content: flex-start;
+}
+.about div h2, .skills h2 {
+    color: var(--bg-color) !important;
+}
+.skills h2, .projects h2, .contact h2 {
     color: var(--light-color);
 }
 .about h2, .skills h2, .projects h2 {
@@ -170,13 +180,21 @@ header {
 .about div, .skills div, .contact div {
     width: 90%;
 }
-    .myself div {
-        width: 100%;
+    .about .myself {
+        justify-content: space-around;
+        flex-grow: 1;
+    }
+    .about .myself div {
+        width: 90%;
     }
         .myself div img {
-            width: 80%;
+            width: 50%;
+            border: solid 5px var(--bg-color);
+            border-radius: 50%;
+            /* margin: 20px 0; */
         }
         .myself div p {
+            font-weight: bold;
             text-align: center;
             font-weight: var(--semi-bold-font-weight);
         }
@@ -185,22 +203,25 @@ header {
             font-size: var(--medium-big-font-size);
             font-weight: var(--bold-font-weight);
         }
-            .about div div, 
-            .about div div div {
-                width: 100%;
-            }
             .about div div div h4 {
                 font-size: var(--normal-medium-font-size);
                 font-weight: var(--semi-bold-font-weight);
             }
             .about div div div p {
                 font-size: var(--normal-font-size);
-                font-weight: var(--normal-font-weight);
+                /* font-weight: var(--normal-font-weight); */
             }
+
+    .about .education, .about .certificates, .about .work-experience {
+        width: 100%;
+    }
 
 /* Skills */
 .skills {
     flex-wrap: wrap;
+    background-color: var(--white-color);
+    background-image: url("../img/texture1.png");
+    background-attachment: fixed;
 }
     .skills h2 {
         width: 100%;
@@ -320,7 +341,7 @@ footer {
         width: inherit;
         height: inherit;
         font-size: var(--normal-medium-font-size);
-        background-color: var(--bg-color);
+        background-color: var(--dark-color);
     }
         .nav-bar ul {
             display: flex;
@@ -350,23 +371,33 @@ footer {
         }
 
     /* About */
+    .about .about-header {
+        height: 60vh;
+    }
     .myself {
         flex-direction: row;
         justify-content: center;
-        margin: 50px 0;
     }
         .myself div:first-of-type  {
             width: 40%;
         }
         .myself div:last-of-type  {
-            font-size: var(--normal-medium-font-size);
             width: 60%;
         }
-    .myself div img {
-        width: 50%;
+        .myself div img {
+            width: 50%;
+        }
+        .about .about-header .myself div p {
+            font-size: var(--normal-medium-font-size);
+            text-align: start;
+        }
+    .about .education, .about .certificates, .about .work-experience {
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
-    .myself div p {
-        text-align: start;
+    .education div, .work-experience div, .certificates div {
+        width: 25%;
     }
 
     /* Skills */
